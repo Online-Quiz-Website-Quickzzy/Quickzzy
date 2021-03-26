@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
 <!-- /font-family -->
 <link rel="stylesheet" href="Add_Quiz.css">
-    <title>Hello, world!</title>
+    <title>Add Quiz</title>
   </head>
   <style>
         *{
@@ -110,8 +110,17 @@
             <div class="card-body bg-light">
             <div class="form-group">   
                 <form class="form-floating">
-                    <textarea class="form-control" id="floatingInputValue"aria-label="With textarea"></textarea>
-                    <label for="floatingInputValue">Write question here</label>
+                  <div class="my-2">                                      
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Difficulty Level</option>
+                      <option value="1">Easy</option>
+                      <option value="2">Medium</option>
+                      <option value="3">Hard</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <textarea class="form-control" name="question" placeholder="Write question here"></textarea>                   
+                  </div>
                     <div class="input-group my-3">
                         <div class="input-group-text">
                           <input class="form-check-input mt-0" type="radio" name="answer" value="" aria-label="Radio button for following text input">
@@ -138,6 +147,7 @@
                       </div>
                       <input type="submit" value="Add Question" class="btn btn-primary mt-3 w-10">
                       <input type="reset" value="Clear" class="btn btn-primary mt-3 w-10">
+
                 </form>
                 </div>
                 </div></div>

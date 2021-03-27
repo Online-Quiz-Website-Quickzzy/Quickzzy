@@ -16,7 +16,7 @@
         <h3>Teacher SignUp</h3>
         <div class="card">
             <img src="../Images/undraw_profile.svg" alt="" class="card-img-top">
-        <form action="">
+        <form action="" method="post">
             <div class="form-group">
                 <label for="email">Email Id:</label>
                 <input type="email" name="email" class="form-control">
@@ -26,7 +26,7 @@
                 <input type="password" name="pwd" class="form-control">
                 <label for="re_pwd">Confirm Password:</label>
                 <input type="password" name="re_pwd" class="form-control">
-                <button type="submit" name="submit"class="btn btn-primary submit">Sign Up</button>               
+                <button type="submit" name="submit"class="btn btn-primary submit"> Sign Up</button>
             </div>
         </form>
         </div>
@@ -52,27 +52,31 @@ if(isset($_POST['submit'])){
     $uname=$_POST['uname'];
     $password=$_POST['pwd'];
     $re_password=$_POST['re_pwd'];
-    if($password==$re_password){
-        $query=mysqli_query($connection,"select * from Teacher where Uname='$uname' and Email='$email'");
-        if($query){
-            if(mysqli_num_rows($query)>0){
-                echo "<script> alert('Teacher Already Exists')</script>";
-                exit();
-                
-            }
-            else{
-                $query=mysqli_query($connection,"insert into Teacher (Uname,Password,Email)values('$uname','$password','$email')");
-                if($query){
-                    echo "<script> alert('Added Successfully')</script>";
-                }else{
-                    echo "<script> alert('Please try Again')</script>";
+    if($email=="" || $uname=="" || $password=="" || $re_password==""){
+        echo"<script>alert('Fields must be filled');</script>";
+    }
+    else{
+        if($password==$re_password){
+            $query=mysqli_query($connection,"select * from teacher where Uname='$uname' or Email='$email'");
+            if($query){
+                if(mysqli_num_rows($query)>0){
+                    echo "<script> alert('Teacher Already Exists')</script>";
+                    exit();                
+                }
+                else{
+                    $query=mysqli_query($connection,"insert into teacher (Uname,Password,Email)values('$uname','$password','$email')");
+                    if($query){
+                        echo "<script> alert('Added Successfully')</script>";
+                        header("Location:Teacher_login.php");
+                    }else{
+                        echo "<script> alert('Please try Again')</script>";
+                    }
                 }
             }
         }
+        else{
+            echo "<script>alert('Password Missmatched')</script>";
+        }
     }
-    else{
-        echo "<script>alert('Password Missmatched')</script>";
-    }
-
 }
 ?>

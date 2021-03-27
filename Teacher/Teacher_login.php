@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,28 +12,25 @@
     <link rel="stylesheet" href="../CSS/Form.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Teacher SignUp</title>
+    <title>Teacher Login</title>
   </head>
   <body>
     <div class="container">
-        <h3>Teacher SignUp</h3>
+        <h3>Teacher Login</h3>
         <div class="card">
             <img src="../Images/undraw_profile.svg" alt="" class="card-img-top">
-        <form action="">
             <div class="form-group">
-                <label for="email">Email Id:</label>
-                <input type="email" name="email" class="form-control">
+            <form action="" method="post">
                 <label for="uname">User Name:</label>
                 <input type="text" name="uname" class="form-control">
                 <label for="pwd">Password:</label>
                 <input type="password" name="pwd" class="form-control">
-                <label for="re_pwd">Confirm Password:</label>
-                <input type="password" name="re_pwd" class="form-control">
-                <button type="submit" name="submit"class="btn btn-primary submit">Sign Up</button>               
+                <button type="submit" name="submit" class="btn btn-primary submit">Sign In</button>
+            </form> 
             </div>
-        </form>
+            
         </div>
-
+        <h6>New to this?<a href="Teacher_Signup.html">Sign Up</a></h6>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -45,34 +45,22 @@
     -->
   </body>
 </html>
+
 <?php
 include('connection.php');
 if(isset($_POST['submit'])){
-    $email = $_POST['email'];
     $uname=$_POST['uname'];
     $password=$_POST['pwd'];
-    $re_password=$_POST['re_pwd'];
-    if($password==$re_password){
-        $query=mysqli_query($connection,"select * from Teacher where Uname='$uname' and Email='$email'");
-        if($query){
-            if(mysqli_num_rows($query)>0){
-                echo "<script> alert('Teacher Already Exists')</script>";
-                exit();
-                
-            }
-            else{
-                $query=mysqli_query($connection,"insert into Teacher (Uname,Password,Email)values('$uname','$password','$email')");
-                if($query){
-                    echo "<script> alert('Added Successfully')</script>";
-                }else{
-                    echo "<script> alert('Please try Again')</script>";
-                }
-            }
+    $query=mysqli_query($connection,"select * from Teacher where Uname='$uname' and Password='$password'");
+    if($query){
+        if(mysqli_num_rows($query)>0){
+            $_SESSION['uname']=$uname;
+            header('location:Teacher_Dashboard.php');
+            
+        }
+        else{
+            echo "<script> alert('Invalid Username or Password');</script>";
         }
     }
-    else{
-        echo "<script>alert('Password Missmatched')</script>";
-    }
-
 }
 ?>

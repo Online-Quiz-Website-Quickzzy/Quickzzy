@@ -3,9 +3,9 @@ session_start();
 if ( $_SESSION['uname']==true) {
   # code...
 }else
-header('location:Admin_login.php');
-$page='home';
-include('include_Structure.php');
+header('location:Teacher_login.php');
+$page='Dashboard';
+include('Teacher_Structure.php');
 ?>
  <!-- Optional JavaScript; choose one of the two! -->
 

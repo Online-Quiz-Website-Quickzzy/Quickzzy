@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("connection.php");
 if ( $_SESSION['uname']==true) {
   # code...
 }else
@@ -15,39 +16,29 @@ include('Teacher_Structure.php');
         <div class="table-responsive">
           <table class="table table-bordered table-striped table-sm">
             <thead>
-                <tr><th colspan="4"><a href="Add_Quiz1.html" style="margin-bottom:1%"><i style="padding:0.4rem"class="fa fa-plus"></i>Add Quiz</a> </th></tr>   
+                <tr><th colspan="6"><a href="Add_Quiz1.php" style="margin-bottom:1%"><i style="padding:0.4rem"class="fa fa-plus"></i>Add Quiz</a> </th></tr>   
               <tr>
                 <th>Quiz Name</th>
                 <th>Number of Questions</th>
                 <th>Category</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
+            <?php
+                include('connection.php');
+                $query=mysqli_query($connection,"select * from quiz");
+                while($row=mysqli_fetch_array($query)){
+            ?>
               <tr>
-                <td>random</td>
-                <td>10</td>
-                <td>Maths</td>
+                <td><?php echo $row['QuizName'];?></td>
+                <td><?php echo $row['Questions'];?></td>
+                <td><?php echo $row['category'];?></td>
+                <td><i class="fas fa-edit"></i></td>
+                <td><a href="Delete_Quiz.php?QuizId=<?php echo $row['QuizId']; ?>"><i class="fas fa-trash"></i></a></td>
               </tr>
-              <tr>
-                <td>random</td>
-                <td>10</td>
-                <td>Maths</td>
-              </tr>
-              <tr>
-                <td>random</td>
-                <td>10</td>
-                <td>Maths</td>
-              </tr>
-              <tr>
-                <td>random</td>
-                <td>10</td>
-                <td>Maths</td>
-              </tr>
-              <tr>
-                <td>random</td>
-                <td>10</td>
-                <td>Maths</td>
-              </tr>
+            <?php } ?>
             </tbody>
           </table>
         </div>

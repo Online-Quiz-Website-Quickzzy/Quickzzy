@@ -35,7 +35,7 @@ include('Teacher_Structure.php');
                 <td><?php echo $row['QuizName'];?></td>
                 <td><?php echo $row['Questions'];?></td>
                 <td><?php echo $row['category'];?></td>
-                <td><i class="fas fa-edit"></i></td>
+                <td><a href="Edit_Quiz.php?QuizId=<?php echo $row['QuizId']; ?>"><i class="fas fa-edit"></i></a></td>
                 <td><a href="Delete_Quiz.php?QuizId=<?php echo $row['QuizId']; ?>"><i class="fas fa-trash"></i></a></td>
               </tr>
             <?php } ?>

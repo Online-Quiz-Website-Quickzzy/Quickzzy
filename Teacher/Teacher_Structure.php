@@ -61,7 +61,7 @@
           </a>
           
           <ul class="nav col-12 col-sm-auto me-lg-auto justify-content-center mb-md-0">
-            <h3 class="text-center"><b>Reverse Auction</b></h3>
+            <h3 class="text-center"><b>Quickzzy</b></h3>
           </ul>
           
           <div class="dropdown text-end">

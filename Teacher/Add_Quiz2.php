@@ -30,9 +30,9 @@ include('Teacher_Structure.php');
                 <div class="card-body bg-light"> 
                   <div class="my-2">                                      
                     <select class="form-select" name="level<?php echo $i?>"aria-label="Default select example">
-                      <option value="1">Easy</option>
-                      <option value="2">Medium</option>
-                      <option value="3">Hard</option>
+                      <option value="Easy">Easy</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Hard">Hard</option>
                     </select>
                   </div>
                   <div class="col-md-12">

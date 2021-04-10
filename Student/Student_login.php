@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,17 +20,17 @@
         <div class="card">
             <img src="../Images/undraw_profile.svg" alt="" class="card-img-top">
             <div class="form-group">
-            <form>
+            <form action="" method="post">
                 <label for="uname">User Name:</label>
                 <input type="text" name="uname" class="form-control">
                 <label for="pwd">Password:</label>
                 <input type="password" name="pwd" class="form-control">
-                <button type="submit" class="btn btn-primary submit">Sign In</button>
+                <button type="submit" name="submit" class="btn btn-primary submit">Sign In</button>
             </form> 
             </div>
             
         </div>
-        <h6>New to this?<a href="Signup.html">Sign Up</a></h6>
+        <h6>New to this?<a href="Student_Signup.php">Sign Up</a></h6>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -42,3 +45,22 @@
     -->
   </body>
 </html>
+
+<?php
+include('connection.php');
+if(isset($_POST['submit'])){
+    $uname=$_POST['uname'];
+    $password=$_POST['pwd'];
+    $query=mysqli_query($connection,"select * from student where Uname='$uname' and Password='$password'");
+    if($query){
+        if(mysqli_num_rows($query)>0){
+            $_SESSION['uname']=$uname;
+            header('location:Student_Dashboard.php');
+            
+        }
+        else{
+            echo "<script> alert('Invalid Username or Password');</script>";
+        }
+    }
+}
+?>

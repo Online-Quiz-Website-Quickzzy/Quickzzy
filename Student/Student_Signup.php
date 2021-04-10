@@ -9,25 +9,28 @@
     <link rel="stylesheet" href="../CSS/Form.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Student Login</title>
+    <title>Student SignUp</title>
   </head>
   <body>
     <div class="container">
-        <h3>Student Login</h3>
+        <h3>Student SignUp</h3>
         <div class="card">
             <img src="../Images/undraw_profile.svg" alt="" class="card-img-top">
+        <form action="" method="post">
             <div class="form-group">
-            <form>
+                <label for="email">Email Id:</label>
+                <input type="email" name="email" class="form-control">
                 <label for="uname">User Name:</label>
                 <input type="text" name="uname" class="form-control">
                 <label for="pwd">Password:</label>
                 <input type="password" name="pwd" class="form-control">
-                <button type="submit" class="btn btn-primary submit">Sign In</button>
-            </form> 
+                <label for="re_pwd">Confirm Password:</label>
+                <input type="password" name="re_pwd" class="form-control">
+                <button type="submit" name="submit"class="btn btn-primary submit"> Sign Up</button>
             </div>
-            
+        </form>
         </div>
-        <h6>New to this?<a href="Student_Signup.html">Sign Up</a></h6>
+
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -42,3 +45,38 @@
     -->
   </body>
 </html>
+<?php
+include('connection.php');
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $uname=$_POST['uname'];
+    $password=$_POST['pwd'];
+    $re_password=$_POST['re_pwd'];
+    if($email=="" || $uname=="" || $password=="" || $re_password==""){
+        echo"<script>alert('Fields must be filled');</script>";
+    }
+    else{
+        if($password==$re_password){
+            $query=mysqli_query($connection,"select * from student where Uname='$uname' or Email='$email'");
+            if($query){
+                if(mysqli_num_rows($query)>0){
+                    echo "<script> alert('Student Already Exists')</script>";
+                    exit();                
+                }
+                else{
+                    $query=mysqli_query($connection,"insert into student (Uname,Password,Email)values('$uname','$password','$email')");
+                    if($query){
+                        echo "<script> alert('Added Successfully')</script>";
+                        header("Location:Student_login.php");
+                    }else{
+                        echo "<script> alert('Please try Again')</script>";
+                    }
+                }
+            }
+        }
+        else{
+            echo "<script>alert('Password Missmatched')</script>";
+        }
+    }
+}
+?>

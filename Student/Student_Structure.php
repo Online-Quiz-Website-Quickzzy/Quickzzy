@@ -70,8 +70,6 @@
             </a>
             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
               <li><a class="dropdown-item" ><?php echo $_SESSION['uname'];?> </a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="Logout.php">Sign out</a></li>
             </ul>
@@ -94,7 +92,31 @@
         <li class="nav-item">
           <a class="nav-link <?php if($page=='Quiz'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
             <span data-feather="file"></span>
-            Quiz
+            Ranking
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($page=='Quiz'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
+            <span data-feather="file"></span>
+            History
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($page=='Feedback'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
+            <span data-feather="file"></span>
+            Feedback
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($page=='Quiz'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
+            <span data-feather="file"></span>
+            Developer
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($page=='Quiz'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
+            <span data-feather="file"></span>
+            About Us
           </a>
         </li>
       </ul>

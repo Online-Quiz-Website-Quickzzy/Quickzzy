@@ -1,0 +1,139 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* overflow: hidden; */
+}
+.banner1,.banner2,.banner3{
+    margin-top: 10vh;
+    width: 100vw;
+    height: 85vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+img{
+    width: 100%;
+    height: 85vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation: zoom-out 4s linear infinite;
+}
+@keyframes zoom-out{
+    100%{
+        width: 100%;
+    }
+}
+.text{
+    width:86vw ;
+    position: absolute;
+    top: 20vh;
+    left: 7vw;
+    color: teal;
+    animation: textup 12s linear infinite;
+    transform: translateY(100px);
+}
+.text p{
+    font-size: 3vh;
+    line-height: 5vh;
+    margin-bottom: 10vh;
+}
+.text span{
+    background: red;
+    height: 2px;
+    width: 14vw;
+    position: absolute;
+    left: 0;
+}
+button{
+
+    height: 6vh;
+    width: 8vw;
+    position: absolute;
+    top: 24vh;
+    left: 20vw;
+    background-color: rgba(128, 0, 128, 0.815);
+    border-radius: 6px;
+    outline: none;
+    transition: .5s;
+    font-size: 3vh;
+}
+.banner1{
+    animation: slide1 12s linear infinite ;
+}
+.banner2{
+    animation: slide2 12s linear infinite ;
+}
+.banner3{
+    animation: slide3 12s linear infinite ;
+}
+@keyframes slide1{
+    0%{
+        visibility: visible;
+    }
+    25%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: hidden;
+    }
+    75%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: visible;
+    }
+}
+@keyframes slide2{
+    0%{
+        visibility: hidden;
+    }
+    25%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: visible;
+    }
+    75%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: hidden;
+    }  
+}
+@keyframes slide3{
+    0%{
+        visibility: hidden;
+    }
+    25%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: hidden;
+    }
+    75%{
+        visibility: visible;
+    }
+    100%{
+        visibility: hidden;
+    }
+}
+@keyframes textup{
+    10%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.box{
+    animation-delay: 0s;
+}
+.box1{
+    animation-delay: 4s;
+}
+.box2{
+    animation-delay: 8s;
+}

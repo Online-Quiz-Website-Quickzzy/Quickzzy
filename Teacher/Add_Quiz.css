@@ -4,6 +4,7 @@
     border-radius:0.5rem;
     font-family: 'RocknRoll One', sans-serif;
     margin:auto;
+    border:none
 }
 .create-quiz img{
     height:7rem;width:7rem;

@@ -18,6 +18,16 @@ include('Teacher_Structure.php');
                     </div>
                 </div>
                 <div class="form-group">   
+                    <div class="input-group-text">
+                        <input type="number" name="Right_marks"class="form-control" id="floatingInputValue" placeholder="Enter marks on right answer">
+                    </div>
+                </div>
+                <div class="form-group">   
+                    <div class="input-group-text">
+                        <input type="number" name="Wrong_marks"class="form-control" id="floatingInputValue" placeholder="Enter marks on wrong answer">
+                    </div>
+                </div>
+                <div class="form-group">   
                     <label for="category">Select Category</label>
                     <div class="input-group-text">
                         <select class="form-select form-select-sm" name="category"aria-label=".form-select-sm ">
@@ -67,7 +77,9 @@ if(isset($_POST['submit'])){
     $quizName=str_replace(" ","_",$quizName);
     $category = $_POST['category'];
     $number = $_POST['number'];
-    if($quizName == "" || $category == "" || $number == ""){
+    $right=$_POST['Right_marks'];
+    $wrong=$_POST['Wrong_marks'];
+    if($quizName == "" || $category == "" || $number == ""|| $right == ""|| $wrong == ""){
         echo("<script>alert('Fields must be filled out')</script>");
     }
     else{
@@ -78,8 +90,8 @@ if(isset($_POST['submit'])){
                 exit();                
             }
             else{
-                $query="insert into Quiz (QuizName,Teacher,category,Questions) values('$quizName','$uname','$category','$number')";
-                $query1="CREATE TABLE $quizName (id INT(6) AUTO_INCREMENT PRIMARY KEY,Question VARCHAR(255),Answer VARCHAR(255),Option1 VARCHAR(255),Option2 VARCHAR(255),Option3 VARCHAR(255),Option4 VARCHAR(255),Level VARCHAR(255))";
+                $query="insert into Quiz (QuizName,Teacher,category,Questions,Right_marks,Wrong_marks) values('$quizName','$uname','$category','$number',$right,$wrong)";
+                $query1="CREATE TABLE $quizName (id INT(6) AUTO_INCREMENT PRIMARY KEY,Question VARCHAR(255),Answer VARCHAR(255),Option1 VARCHAR(255),Option2 VARCHAR(255),Option3 VARCHAR(255),Option4 VARCHAR(255),Level VARCHAR(255),Right_marks INT(6),Wrong_marks INT(6))";
                 if(mysqli_query($connection,"$query") && mysqli_query($conn,"$query1")){
                     echo "<script> alert('Added Successfully');
                     location.replace('Add_Quiz2.php?QuizName=$quizName')</script>";

@@ -70,8 +70,6 @@
             </a>
             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
               <li><a class="dropdown-item" ><?php echo $_SESSION['uname'];?> </a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="Logout.php">Sign out</a></li>
             </ul>
@@ -89,6 +87,18 @@
           <a class="nav-link <?php if($page=='Dashboard'){echo 'active';} ?>"aria-current="page" href="Teacher_Dashboard.php">
             <span data-feather="home"></span>
             Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($page=='Ranking'){echo 'active';} ?>" aria-current="page" href="Ranking.php">
+            <span data-feather="file"></span>
+            Ranking
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($page=='Feedback'){echo 'active';} ?>" aria-current="page" href="Feedback.php">
+            <span data-feather="file"></span>
+            Feedback
           </a>
         </li>
         <li class="nav-item">

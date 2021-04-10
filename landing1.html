@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../CSS/slider.css" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      nav {
+        background-color: rgb(135, 140, 146);
+        padding: 1rem 1rem 1rem 1rem;
+        position: relative;
+      }
+      .first li {
+        color: black;
+      }
+      nav li {
+        list-style: none;
+        padding: 0rem 1rem;
+        display: inline-block;
+        font-size: 3vh;
+      }
+      .second {
+        margin-left: 8vw;
+      }
+      nav button {
+        width: 10vw;
+        height: 6vh;
+        border-radius: 2vh;
+        margin-left: 65vw;
+        /* box-shadow: none; */
+        outline: none;
+        transition: 0.5s;
+        background-color: rgba(139, 0, 139, 0.781);
+        font-size: 3vh;
+        top: 2vh;
+      }
+      .second:hover {
+        color: crimson;
+        transition: 0.5s;
+      }
+      .cards {
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(128, 0, 128, 1);
+        position: absolute;
+        top: 100vh;
+        display: block;
+      }
+      .cards h1 {
+        text-align: center;
+        color: white;
+        margin-top: 4vh;
+      }
+
+      .c1 {
+        width: 35%;
+        height: 80%;
+        background-color: blanchedalmond;
+        position: absolute;
+        top: 15vh;
+        margin-left: 10vw;
+        border-radius: 20px;
+        box-shadow: 5px 10px 10px gold;
+      }
+      .c2 {
+        width: 35%;
+        height: 80%;
+        background-color: blanchedalmond;
+        position: absolute;
+        top: 15vh;
+        margin-left: 56vw;
+        border-radius: 20px;
+        box-shadow: 5px 10px 10px gold;
+      }
+      .c1 img {
+        display: block;
+        position: absolute;
+        height: 60%;
+        top: 18vh;
+      }
+      .c2 img {
+        display: block;
+        position: absolute;
+        height: 60%;
+        top: 18vh;
+      }
+      .c1 h1 {
+        position: absolute;
+        top: 40vh;
+        margin-left: 12vw;
+        color: black;
+        font-size: 7vh;
+      }
+      .c2 h1 {
+        position: absolute;
+        top: 40vh;
+        margin-left: 12vw;
+        color: black;
+        font-size: 7vh;
+      }
+      .c1 button {
+        height: 8vh;
+        width: 12vw;
+        position: absolute;
+        top: 60vh;
+        left: 12vw;
+        background-color: gold;
+        border-radius: 6px;
+        outline: none;
+        transition: 0.5s;
+        font-size: 3vh;
+        color: white;
+      }
+      .c2 button {
+        height: 8vh;
+        width: 12vw;
+        position: absolute;
+        top: 60vh;
+        left: 12vw;
+        background-color: gold;
+        border-radius: 6px;
+        outline: none;
+        transition: 0.5s;
+        font-size: 3vh;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="first">
+        <li>
+          <b
+            style="
+              font-size: 2vw;
+              text-shadow: -3px -3px 3px cyan, 3px 3px 3px red;
+            "
+            >Quickzzy</b
+          >
+        </li>
+        <li class="second">for Teacher</li>
+        <li class="second">for Student</li>
+        <li class="second">for school</li>
+        <li class="second">for college</li>
+        <button onclick="location.href = 'signup.html';">Signup</button>
+      </ul>
+    </nav>
+    <div class="banner1">
+      <img src="../Images/quiz-5351649_1920.png" />
+      <div class="text box">
+        <h1>The 100% engagement platform</h1>
+        <span></span>
+        <br />
+        <p>
+          Find and create free gamified quizzes and interactive<br />
+          lessons to engage any learner.
+        </p>
+        <button onclick="location.href = 'login.html'; ">login</button>
+      </div>
+    </div>
+    <div class="banner2">
+      <img src="../Images/choices-5230400_1920.jpg" />
+      <div class="text box1">
+        <h1>The 100% engagement platform</h1>
+        <span></span>
+        <br />
+        <p>
+          Find and create free gamified quizzes and interactive<br />
+          lessons to engage any learner.
+        </p>
+        <button onclick="location.href = 'login.html'; ">login</button>
+      </div>
+    </div>
+    <div class="banner3">
+      <img src="../Images/question-2004314_1920.jpg" />
+      <div class="text box2">
+        <h1>The 100% engagement platform</h1>
+        <span></span>
+        <br />
+        <p>
+          Find and create free gamified quizzes and interactive<br />
+          lessons to engage any learner.
+        </p>
+        <button onclick="location.href = 'login.html'; ">login</button>
+      </div>
+    </div>
+    <div class="cards">
+      <h1><b>Learn more about Quickzzy</b></h1>
+      <div class="c1">
+        <img src="../Images/5-PRODUCT_LINEUP-For_Work.png" />
+        <h1>Teacher</h1>
+
+        <button>GET MORE</button>
+      </div>
+      <div class="c2">
+        <img src="../Images/5-PRODUCT_LINEUP-For_Teachers.png" />
+        <h1>Student</h1>
+        <button>GET MORE</button>
+      </div>
+    </div>
+  </body>
+</html>

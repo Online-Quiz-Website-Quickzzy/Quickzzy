@@ -9,7 +9,7 @@ include('Teacher_Structure.php');
 ?>
     <main class="col-md mx-auto mt-2 ms-sm-auto col-lg-9 text-center">
         <div class="container text-center">
-            <h2><b>Feedback</b></h2>
+            <h2><b>Ranking</b></h2>
             <hr class="col-sm-5 mx-auto">
         </div>
         <div class="table-responsive">

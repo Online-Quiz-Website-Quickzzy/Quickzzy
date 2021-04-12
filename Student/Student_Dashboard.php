@@ -37,6 +37,7 @@ include('Student_Structure.php');
                 <td><?php echo $row['Questions'];?></td>
                 <td><?php echo $row['Questions']*$row['Right_marks'];?></td>
                 <td><?php echo $row['Teacher'];?></td> 
+                <td><a href="Test.php?QuizName=<?php echo $row['QuizName']; ?>">Start<i class="fas fa-sign-in-alt"></i></a></td>
               </tr>
             <?php } ?>
             </tbody>

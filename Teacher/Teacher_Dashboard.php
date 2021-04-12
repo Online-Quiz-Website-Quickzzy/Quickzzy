@@ -7,6 +7,43 @@ header('location:Teacher_login.php');
 $page='Dashboard';
 include('Teacher_Structure.php');
 ?>
+    <main class="col-md mx-auto mt-2 ms-sm-auto col-lg-9 text-center">
+        <div class="container text-center">
+            <h2><b>Quiz</b></h2>
+            <hr class="col-sm-5 mx-auto">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped table-sm">
+            <thead>
+
+              <tr>
+                <th>Quiz Name</th>
+                <th>Category</th>
+                <th>Number of Questions</th>
+                <th>Marks</th>
+                <th>Teacher Name</th>
+                <th>Join</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php
+                include('connection.php');
+                $query=mysqli_query($connection,"select * from quiz");
+                while($row=mysqli_fetch_array($query)){
+            ?>
+              <tr>
+                <td><?php echo $row['QuizName'];?></td>                
+                <td><?php echo $row['category'];?></td>
+                <td><?php echo $row['Questions'];?></td>
+                <td><?php echo $row['Questions']*$row['Right_marks'];?></td>
+                <td><?php echo $row['Teacher'];?></td> 
+                <td><a href="Test.php?QuizName=<?php echo $row['QuizName']; ?>">Start<i class="fas fa-sign-in-alt"></i></a></td>
+              </tr>
+            <?php } ?>
+            </tbody>
+          </table>
+        </div>
+      </main>
  <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

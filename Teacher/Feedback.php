@@ -30,7 +30,7 @@ include('Teacher_Structure.php');
               <tr>
                 <td><?php echo $row['Feedback'];?></td>
                 <td><?php echo $row['Student_name'];?></td>
-                <td><a href="Delete_Feedback.php?QuizId=<?php echo $row['QuizId']; ?>"><i class="fas fa-trash"></i></a></td>
+                <td><a href="Delete_Feedback.php?Student_name=<?php echo $row['Student_name']; ?>"><i class="fas fa-trash"></i></a></td>
               </tr>
             <?php } ?>
             </tbody>

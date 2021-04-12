@@ -102,21 +102,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($page=='Feedback'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
+          <a class="nav-link <?php if($page=='Feedback'){echo 'active';} ?>" aria-current="page" href="Add_Feedback.php">
             <span data-feather="file"></span>
             Feedback
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php if($page=='Quiz'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
-            <span data-feather="file"></span>
-            Developer
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php if($page=='Quiz'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
-            <span data-feather="file"></span>
-            About Us
           </a>
         </li>
       </ul>

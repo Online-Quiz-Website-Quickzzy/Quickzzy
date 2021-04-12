@@ -106,31 +106,11 @@ if(isset($_POST['submit'])){
       $option3=$_POST["option3$i"];
       $option4=$_POST["option4$i"];      
         $answer=$_POST["answer$i"];
-        if($answer =="option1"){          
-            $query=mysqli_query($conn,"INSERT INTO $name(Question, Answer, Option1, Option2, Option3, Option4, Level) VALUES ('$question', '$option1','$option1', '$option2', '$option3','$option4','$level')");
-            if($query){
-              
-            }
-        }
-        else if($answer =="option2"){
-            $query=mysqli_query($conn,"INSERT INTO $name(Question, Answer, Option1, Option2, Option3, Option4, Level) VALUES ('$question', '$option2','$option1', '$option2', '$option3','$option4','$level')");
-            if($query){
-              
-            }
-        }
-        else if($answer =="option3"){
-            $query=mysqli_query($conn,"INSERT INTO $name(Question, Answer, Option1, Option2, Option3, Option4, Level) VALUES ('$question', '$option3','$option1', '$option2', '$option3','$option4','$level')");
-            if($query){
-              
-            }
-        }
-        else if($answer =="option4"){
-            $query=mysqli_query($conn,"INSERT INTO $name(Question, Answer, Option1, Option2, Option3, Option4, Level) VALUES ('$question', '$option4','$option1', '$option2', '$option3','$option4','$level')");
-            if($query){
+        $query=mysqli_query($conn,"INSERT INTO $name(Question, Answer, Option1, Option2, Option3, Option4, Level) VALUES ('$question', '$answer','$option1', '$option2', '$option3','$option4','$level')");
 
-            }
         }
-    }     echo "<script> alert('Added Successfully');
+        echo "<script> alert('Added Successfully');
   window.location='Quiz.php';</script>";
-  }
+    }     
+  
     ?>

@@ -89,13 +89,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($page=='Quiz'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
+          <a class="nav-link <?php if($page=='Ranking'){echo 'active';} ?>" aria-current="page" href="Ranking.php">
             <span data-feather="file"></span>
             Ranking
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($page=='Quiz'){echo 'active';} ?>" aria-current="page" href="Quiz.php">
+          <a class="nav-link <?php if($page=='History'){echo 'active';} ?>" aria-current="page" href="History.php">
             <span data-feather="file"></span>
             History
           </a>

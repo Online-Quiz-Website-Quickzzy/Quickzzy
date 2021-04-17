@@ -4,7 +4,7 @@ if ( $_SESSION['uname']==true) {
   # code...
 }else
 header('location:Student_login.php');
-$page='Dashboard';
+$page='Ranking';
 include('Student_Structure.php');
 ?>
     <main class="col-md mx-auto mt-2 ms-sm-auto col-lg-9 text-center">
@@ -12,24 +12,32 @@ include('Student_Structure.php');
             <h2><b>Result</b></h2>
             <hr class="col-sm-5 mx-auto">
         </div>
-        <?php
-  if(isset($_POST['submit'])){
-    include("connection.php");
-    $name=$_GET['QuizName'];                
-                $query=mysqli_query($connection,"select Questions from quiz where QuizName='$name'");
-                $number=mysqli_fetch_array($query);
-                echo "<script> alert('$number[0]')</script>";
-                $num=$number[0];
-                for($i=1;$i<=$number[0];$i++){
-                  $num=$i+$num;
-                    $ans=$_POST["answer$num"];
-                    if(!empty($ans)){
-                      echo $ans;
-                    }
-                    
-  }
-}
-?>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped table-sm">
+            <thead>
+
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php
+                include('connection.php');
+                $rank=1;
+                $query=mysqli_query($connection,"select * from history ORDER BY Marks DESC");
+                while($row=mysqli_fetch_array($query)){
+            ?>
+              <tr>
+                <td><?php echo $rank;$rank=$rank+1;?></td>                
+                <td><?php echo $row['student_name'];?></td>
+                <td><?php echo $row['Marks'];?></td>
+              </tr>
+            <?php } ?>
+            </tbody>
+
+          </table>
         </div>
       </main>
  <!-- Optional JavaScript; choose one of the two! -->

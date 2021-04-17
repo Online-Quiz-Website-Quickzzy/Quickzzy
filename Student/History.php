@@ -3,13 +3,13 @@ session_start();
 if ( $_SESSION['uname']==true) {
   # code...
 }else
-header('location:Teacher_login.php');
-$page='Ranking';
-include('Teacher_Structure.php');
+header('location:Student_login.php');
+$page='History';
+include('Student_Structure.php');
 ?>
     <main class="col-md mx-auto mt-2 ms-sm-auto col-lg-9 text-center">
         <div class="container text-center">
-            <h2><b>Result</b></h2>
+            <h2><b>Quiz</b></h2>
             <hr class="col-sm-5 mx-auto">
         </div>
         <div class="table-responsive">
@@ -17,26 +17,44 @@ include('Teacher_Structure.php');
             <thead>
 
               <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Score</th>
+                <th>Quiz Name</th>
+                <th>Questions</th>
+                <th>Right</th>
+                <th>Wrong</th>
+                <th>Total Marks</th>
               </tr>
             </thead>
             <tbody>
             <?php
                 include('connection.php');
-                $rank=1;
-                $query=mysqli_query($connection,"select * from history ORDER BY Marks DESC");
+                
+                $name=$_SESSION['uname'];
+                $query=mysqli_query($connection,"select * from history where student_name='$name'");
                 while($row=mysqli_fetch_array($query)){
             ?>
               <tr>
-                <td><?php echo $rank;$rank=$rank+1;?></td>                
-                <td><?php echo $row['student_name'];?></td>
-                <td><?php echo $row['Marks'];?></td>
+                <td><?php echo $row['Quiz_name'];?></td>    
+                <td>
+                <?php 
+                                $quiz_name=$row['Quiz_name'];
+                                $query1=mysqli_query($connection,"select Questions from quiz where QuizName='$quiz_name'");
+                                $quiz=mysqli_fetch_array($query1);
+                echo $quiz[0];?>
+                </td>   
+                <td><?php echo $row['Right'];?></td>
+                <td><?php echo $row['Wrong'];?></td>
+                <?php 
+                $quiz_name=$row['Quiz_name'];
+                $query1=mysqli_query($connection,"select Questions from quiz where QuizName='$quiz_name'");
+                $quiz=mysqli_fetch_array($query1);
+                $query2=mysqli_query($connection,"select Right_marks from quiz where QuizName='$quiz_name'");
+                $right_marks=mysqli_fetch_array($query2);
+
+                ?>
+                <td><?php echo $row['Marks']." Out of ".$right_marks[0]*$quiz[0];?></td> 
               </tr>
             <?php } ?>
             </tbody>
-
           </table>
         </div>
       </main>

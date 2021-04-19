@@ -22,8 +22,10 @@
 <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="Add_Quiz.css">
 <!-- /font-family -->
+
     <title>Student</title>
   </head>
+  
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;

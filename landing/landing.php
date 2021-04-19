@@ -14,6 +14,9 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -45,7 +48,7 @@
         font-family: "Nunito", sans-serif;
         position: relative;
       }
-      nav button {
+      nav button{
         width: 10vw;
         height: 6vh;
         border-radius: 2vh;
@@ -58,6 +61,7 @@
         top: 2vh;
         color: lavenderblush;
       }
+      
       .second:hover {
         color: lightpink;
         transition: 0.5s;
@@ -151,24 +155,95 @@
         color: white;
         border: none;
       }
-      /* .menu {
+      .menu {
         position: absolute;
-        background-color: antiquewhite;
+        background-color: darkcyan;
+        width: 100%;
+        height: 80vh;
+        top:202vh;
       }
-
+      .menu h1{
+        text-align: center;
+        position: absolute;
+        left: 40vw;
+        top: 5vh;
+      }
       .menu ul {
         list-style-type: none;
+      
       }
       .menu li {
-        display: inline;
+        display: inline-block;
+        position: absolute;
+        top: 20vh;
       }
-      .circle {
+       .circle {
         border-radius: 140px;
-        width: 140px;
-        height: 140px;
-        background: #00b4ff;
-        margin-left: 75px;
-      } */
+        width:30vh;
+        height: 30vh;
+        background-color:hotpink;
+        background-image: url(img2.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        left: 10vw;
+        position: absolute;
+        top: 20vh;
+      }
+       .circle1 {
+        border-radius: 140px;
+        width:30vh;
+        height: 30vh;
+        background-color: red;
+        position: absolute;
+        top: 20vh;
+        left: 30vw;
+        background-image: url(img4.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+
+      }
+      .circle2 {
+        border-radius: 140px;
+        width:30vh;
+        height: 30vh;
+        background-color: #00b4ff;
+        left: 50vw;
+        position: absolute;
+        top: 20vh;
+        background-image: url(img3.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .circle3 {
+        border-radius: 140px;
+        width:30vh;
+        height: 30vh;
+        background-color: green;
+        left: 70vw;
+        position: absolute;
+        top: 20vh;
+        background-image: url(img1.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      li span{
+        position: absolute;
+        top: 33vh;
+        left: 8vh;
+        color:black;
+        font-size: 2.5vh;
+      }
+      .s{
+        position:absolute;
+        right:3vw;
+        color: lavenderblush;
+        background-color: #bc3062;
+      }
     </style>
   </head>
   <body>
@@ -183,11 +258,22 @@
             >Quickzzy</b
           >
         </li>
-        <li class="second">For Teacher</li>
-        <li class="second">For Student</li>
-        <li class="second">For School</li>
-        <li class="second">For College</li>
-        <button onclick="location.href = 'signup.html';">Signup</button>
+        
+        <!-- <button class = "btn" onclick="location.href = 'Student/Student_Signup.php';">Signup</button>
+        <button class = "btn1" onclick="location.href = 'Teacher/Teacher_Signup.php';">Signup</button> -->
+        <li class="nav-item mx-0 s" >
+              <div class="dropdown show" >
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Signup
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="Student/Student_Signup.php">Student</a>
+                  <a class="dropdown-item" href="Teacher/Teacher_Signup.php">Teacher</a>
+                </div>
+              </div>
+        
+        </li>
       </ul>
     </nav>
     <div class="banner1">
@@ -201,7 +287,7 @@
           Find and create free gamified quizzes and interactive<br />
           lessons to engage any learner.
         </p>
-        <button onclick="location.href = 'login.html'; ">Login</button>
+        <!-- <button onclick="location.href = 'login.html'; ">Login</button> -->
       </div>
     </div>
     <div class="banner2">
@@ -214,7 +300,7 @@
           Find and create free gamified quizzes and interactive<br />
           lessons to engage any learner.
         </p>
-        <button onclick="location.href = 'login.html'; ">Login</button>
+        <!-- <button onclick="location.href = 'login.html'; ">Login</button> -->
       </div>
     </div>
     <div class="banner3">
@@ -227,7 +313,7 @@
           Find and create free gamified quizzes and interactive<br />
           lessons to engage any learner.
         </p>
-        <button onclick="location.href = 'login.html'; ">Login</button>
+        <!-- <button onclick="location.href = 'login.html'; ">Login</button> -->
       </div>
     </div>
 
@@ -237,21 +323,30 @@
         <img src="../Images/5-PRODUCT_LINEUP-For_Work.png" />
         <h1>Teacher</h1>
 
-        <button>GET MORE</button>
+        <button>Login</button>
       </div>
       <div class="c2">
         <img src="../Images/5-PRODUCT_LINEUP-For_Teachers.png" />
         <h1>Student</h1>
-        <button>GET MORE</button>
+        <button>Login</button>
       </div>
     </div>
-    <!-- <div class="menu">
-      <ul>
-        <li class="circle"></li>
-        <li class="circle"></li>
-        <li class="circle"></li>
-        <li class="circle"></li>
+    <div class="menu">
+      <h1><b> Our Developers </b></h1>
+      <ul >
+        <li class="circle">
+          <span>Mansi Verma </span>
+        </li>
+        <li class="circle1">
+          <span>Diksha Khandelwal</span>
+        </li>
+        <li class="circle2">
+          <span>Tanya Goyal</span>
+        </li>
+        <li class="circle3">
+          <span>Diya Gupta</span>
+        </li>
       </ul>
-    </div> -->
+    </div>
   </body>
 </html>

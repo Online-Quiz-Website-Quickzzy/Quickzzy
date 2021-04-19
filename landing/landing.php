@@ -20,6 +20,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
 
     <style>
       * {
@@ -33,19 +35,18 @@
       }
       .first {
         color: black;
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
       }
       nav li {
         list-style: none;
         padding: 0rem 0rem;
         display: inline-block;
         font-size: 3vh;
-        font-family: "Nunito", sans-serif;
+
       }
       .second {
         margin-left: 8vw;
         color: white;
-        font-family: "Nunito", sans-serif;
+
         position: relative;
       }
       nav button{
@@ -244,6 +245,12 @@
         color: lavenderblush;
         background-color: #bc3062;
       }
+      *{
+        padding:0;margin:0;
+        }
+        body{
+        font-family: 'RocknRoll One', sans-serif;
+        }
     </style>
   </head>
   <body>
@@ -268,8 +275,8 @@
                 </a>
               
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="Student/Student_Signup.php">Student</a>
-                  <a class="dropdown-item" href="Teacher/Teacher_Signup.php">Teacher</a>
+                  <a class="dropdown-item" href="../Student/Student_Signup.php">Student</a>
+                  <a class="dropdown-item" href="../Teacher/Teacher_Signup.php">Teacher</a>
                 </div>
               </div>
         
@@ -323,16 +330,16 @@
         <img src="../Images/5-PRODUCT_LINEUP-For_Work.png" />
         <h1>Teacher</h1>
 
-        <button>Login</button>
+        <a href="../Teacher/Teacher_login.php"><button>Login</button></a>
       </div>
       <div class="c2">
         <img src="../Images/5-PRODUCT_LINEUP-For_Teachers.png" />
         <h1>Student</h1>
-        <button>Login</button>
+        <a href="../Student/Student_login.php"><button>Login</button></a>
       </div>
     </div>
-    <div class="menu">
-      <h1><b> Our Developers </b></h1>
+    <div class="menu text-center">
+      <h1 class="mx-5"><b> Team</b></h1>
       <ul >
         <li class="circle">
           <span>Mansi Verma </span>

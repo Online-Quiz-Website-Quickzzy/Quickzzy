@@ -104,7 +104,6 @@ include('Student_Structure.php');
     $query=mysqli_query($connection,"select Wrong_marks from quiz where QuizName='$name'");
     $wrong_marks=mysqli_fetch_array($query);
     $wrong_marks=$wrong_marks[0];
-
     $query="select * from $name";
     $query1=mysqli_query($conn,$query);
     $i=1;      
@@ -117,7 +116,7 @@ include('Student_Structure.php');
           $ans=$_POST["answer$i"];
           if(!empty($ans)){
             if($answer ==$ans){
-              echo" answer correct";
+
               $right=$right+1;
 
               $total=$total+$right_marks;
@@ -125,7 +124,7 @@ include('Student_Structure.php');
 
             }
             else{
-              echo"incorrect";
+
               $wrong=$wrong+1;
               $total=$total-$wrong_marks;
             }
@@ -137,12 +136,12 @@ include('Student_Structure.php');
           
           $query1=mysqli_query($connection,"UPDATE `history` SET `Right`='$right',`Wrong`='$wrong',`student_name`='$sname',`Quiz_name`='$name',`Marks`='$total' WHERE student_name='$sname' and Quiz_name='$name'");
           if($query1)
-          echo "<script> alert('yp Successfully')</script>";
+          echo "<script> alert('Marks Upgraded')</script>";
         }
         else{
           $query=mysqli_query($connection,"insert into history (`Right`, `Wrong`, `student_name`, `Quiz_name`, `Marks`) VALUES ('$right','$wrong','$sname','$name','$total')");
             if($query){
-                echo "<script> alert('Successfully')</script>";
+                echo "<script> alert('Thank you')</script>";
                 // header("Location:.php");
             }else{
                 echo "<script> alert('Please try Again')</script>";

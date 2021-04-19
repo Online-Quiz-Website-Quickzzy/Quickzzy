@@ -92,12 +92,23 @@ include('Teacher_Structure.php');
 <?php
   if(isset($_POST['submit'])){
     include("connection.php");
-    $name=$_GET['QuizName'];                
+    $name=$_GET['QuizName'];  
+    $sname=$_SESSION['uname'];              
     $query=mysqli_query($connection,"select Questions from quiz where QuizName='$name'");
     $number=mysqli_fetch_array($query);
+
+    $query=mysqli_query($connection,"select Right_marks from quiz where QuizName='$name'");
+    $right_marks=mysqli_fetch_array($query);
+    $right_marks=$right_marks[0];
+
+    $query=mysqli_query($connection,"select Wrong_marks from quiz where QuizName='$name'");
+    $wrong_marks=mysqli_fetch_array($query);
+    $wrong_marks=$wrong_marks[0];
     $query="select * from $name";
     $query1=mysqli_query($conn,$query);
     $i=1;      
+    $right=0;$wrong=0;$total=0;
+    
     while($row=mysqli_fetch_array($query1)){    
       $answer=$row["Answer"];
       for($b=1;$b<=$number[0];$b++){
@@ -105,12 +116,40 @@ include('Teacher_Structure.php');
           $ans=$_POST["answer$i"];
           if(!empty($ans)){
             if($answer ==$ans){
-              echo" answer correct<br>";
+
+              $right=$right+1;
+
+              $total=$total+$right_marks;
+
+
             }
             else{
-              echo"answer incorrect<br>";
+
+              $wrong=$wrong+1;
+              $total=$total-$wrong_marks;
             }
           }
       }
+      $query=mysqli_query($connection,"select * from history where student_name='$sname' and Quiz_name='$name'");
+      if($query){
+        if(mysqli_num_rows($query)>0){
+          
+          $query1=mysqli_query($connection,"UPDATE `history` SET `Right`='$right',`Wrong`='$wrong',`student_name`='$sname',`Quiz_name`='$name',`Marks`='$total' WHERE student_name='$sname' and Quiz_name='$name'");
+          if($query1)
+          echo "<script> alert('Marks Upgraded');location.replace('Ranking.php')</script>";
+        }
+        else{
+          $query=mysqli_query($connection,"insert into history (`Right`, `Wrong`, `student_name`, `Quiz_name`, `Marks`) VALUES ('$right','$wrong','$sname','$name','$total')");
+            if($query){
+                echo "<script> alert('Thank you');location.replace('Ranking.php')</script>";
+              
+            }else{
+                echo "<script> alert('Please try Again')</script>";
+            }
+        }
+    }
+
+      
+      
 }
 ?>

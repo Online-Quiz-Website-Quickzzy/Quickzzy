@@ -15,9 +15,9 @@ include('Teacher_Structure.php');
         <div class="table-responsive">
           <table class="table table-bordered table-striped table-sm">
             <thead>
-
-              <tr>
+            <tr>
                 <th>Rank</th>
+                <th>Quiz Name</th>
                 <th>Name</th>
                 <th>Score</th>
               </tr>
@@ -26,11 +26,12 @@ include('Teacher_Structure.php');
             <?php
                 include('connection.php');
                 $rank=1;
-                $query=mysqli_query($connection,"select * from history ORDER BY Marks DESC");
+                $query=mysqli_query($connection,"SELECT * FROM history ORDER BY `Quiz_name`, `Marks`desc");
                 while($row=mysqli_fetch_array($query)){
             ?>
               <tr>
-                <td><?php echo $rank;$rank=$rank+1;?></td>                
+                <td><?php echo $rank;$rank=$rank+1;?></td>  
+                <td><?php echo $row['Quiz_name'];?></td>     
                 <td><?php echo $row['student_name'];?></td>
                 <td><?php echo $row['Marks'];?></td>
               </tr>

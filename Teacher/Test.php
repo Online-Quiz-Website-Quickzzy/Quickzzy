@@ -136,12 +136,12 @@ include('Teacher_Structure.php');
           
           $query1=mysqli_query($connection,"UPDATE `history` SET `Right`='$right',`Wrong`='$wrong',`student_name`='$sname',`Quiz_name`='$name',`Marks`='$total' WHERE student_name='$sname' and Quiz_name='$name'");
           if($query1)
-          echo "<script> alert('Marks Upgraded');location.replace('Ranking.php')</script>";
+          echo "<script> alert('Marks Upgraded');location.replace('Result.php?QuizName=$name')</script>";
         }
         else{
           $query=mysqli_query($connection,"insert into history (`Right`, `Wrong`, `student_name`, `Quiz_name`, `Marks`) VALUES ('$right','$wrong','$sname','$name','$total')");
             if($query){
-                echo "<script> alert('Thank you');location.replace('Ranking.php')</script>";
+                echo "<script> alert('Thank you');location.replace('Result.php?QuizName=$name')</script>";
               
             }else{
                 echo "<script> alert('Please try Again')</script>";

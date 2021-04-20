@@ -143,6 +143,12 @@
             Feedback
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($page=='Reply'){echo 'active';} ?>" aria-current="page" href="Teachers_Reply.php">
+            <span data-feather="file"></span>
+            Reply
+          </a>
+        </li>
       </ul>
 
     </div>

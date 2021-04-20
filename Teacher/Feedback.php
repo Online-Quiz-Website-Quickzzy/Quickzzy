@@ -18,6 +18,7 @@ include('Teacher_Structure.php');
               <tr>
                 <th>Feedback</th>
                 <th>Student Name</th>
+                <th>Reply</th>
                 <th>Delete</th>
               </tr>
             </thead>
@@ -30,6 +31,7 @@ include('Teacher_Structure.php');
               <tr>
                 <td><?php echo $row['Feedback'];?></td>
                 <td><?php echo $row['Student_name'];?></td>
+                <td><a href="Reply.php?id=<?php echo $row['id']; ?>"><i class="fas fa-reply"></i></a></td>
                 <td><a href="Delete_Feedback.php?id=<?php echo $row['id']; ?>"><i class="fas fa-trash"></i></a></td>
               </tr>
             <?php } ?>

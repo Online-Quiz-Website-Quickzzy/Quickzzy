@@ -27,7 +27,8 @@ include('Teacher_Structure.php');
             <tbody>
             <?php
                 include('connection.php');
-                $query=mysqli_query($connection,"select * from quiz");
+                $tname=$_SESSION['uname'];
+                $query=mysqli_query($connection,"select * from quiz where Teacher='$tname'");
                 while($row=mysqli_fetch_array($query)){
             ?>
               <tr>

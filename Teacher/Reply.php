@@ -15,12 +15,13 @@ include('Teacher_Structure.php');
                 <div class="form-group">   
                     <?php
                         include("connection.php");
-                        $query=mysqli_query($connection,"select * from feedback");
+                        $id=$_GET['id'];
+                        $query=mysqli_query($connection,"select * from feedback where id='$id'");
                         $query1=mysqli_fetch_array($query);
                     ?>
                 <div class="col-md-12">
                     <label>Student Name And Feedback</label>
-                    <input type="text" disabled class="form-control" value="<?php echo $query1[2]." : ".$query1[1];?>"></textarea>                   
+                    <input type="text" disabled class="form-control" value="<?php echo $query1['Student_name']." : ".$query1['Feedback'];?>"></textarea>                   
                   </div>
                 </div>
                 <div class="form-group">   

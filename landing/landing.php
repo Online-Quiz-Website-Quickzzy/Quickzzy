@@ -294,7 +294,7 @@
           Find and create free gamified quizzes and interactive<br />
           lessons to engage any learner.
         </p>
-        <!-- <button onclick="location.href = 'login.html'; ">Login</button> -->
+      
       </div>
     </div>
     <div class="banner2">
@@ -307,7 +307,7 @@
           Find and create free gamified quizzes and interactive<br />
           lessons to engage any learner.
         </p>
-        <!-- <button onclick="location.href = 'login.html'; ">Login</button> -->
+        
       </div>
     </div>
     <div class="banner3">
@@ -320,7 +320,7 @@
           Find and create free gamified quizzes and interactive<br />
           lessons to engage any learner.
         </p>
-        <!-- <button onclick="location.href = 'login.html'; ">Login</button> -->
+        
       </div>
     </div>
 

@@ -339,7 +339,7 @@
       </div>
     </div>
     <div class="menu text-center">
-      <h1 class="mx-5"><b> Team</b></h1>
+      <h1 class="mx-5"><b> Team Members</b></h1>
       <ul >
         <li class="circle">
           <span>Mansi Verma </span>
